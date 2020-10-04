@@ -33,7 +33,9 @@ public class BankAccountRestController {
     public BankAccount update(@PathVariable int id,
                               @RequestBody BankAccount bankAccount) {
         BankAccount record = repository.findById(id).get();
-        record.setBalance(bankAccount.getBalance());
+        record.setBalance(bankAccount.getBalance() + bankAccount.getDeposit() - bankAccount.getWithdraw());
+        bankAccount.setDeposit(0);
+        bankAccount.setWithdraw(0);
         repository.save(record);
         return record;
     }

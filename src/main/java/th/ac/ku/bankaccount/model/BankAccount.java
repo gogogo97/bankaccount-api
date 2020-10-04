@@ -15,7 +15,8 @@ public class BankAccount {
     private int customerId;
     private String type;
     private double balance;
-
+    private double deposit;
+    private double withdraw;
 
 
     public int getId() {
@@ -58,6 +59,22 @@ public class BankAccount {
                 ", type='" + type + '\'' +
                 ", balance=" + balance +
                 '}';
+    }
+
+    public double getDeposit() {
+        return deposit;
+    }
+
+    public void setDeposit(double deposit) {
+        this.deposit = deposit;
+    }
+
+    public double getWithdraw() {
+        return withdraw;
+    }
+
+    public void setWithdraw(double withdraw) {
+        this.withdraw = withdraw;
     }
     //  ให้ Generate..
     //       - Getters และ Setters ทั้งหมด
